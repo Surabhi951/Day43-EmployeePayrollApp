@@ -60,6 +60,8 @@ class EmployeePayrollData{
     }
 
     toString(){
+        const options = { year: 'numeric' , month: 'long' , day: 'numeric' }; 
+        const empData = this.startDate ?  "undefined" : this.startDate.toLocalDateString("en-US", options);
         return(
             "{"
             +" Name = "+this.name
@@ -117,6 +119,9 @@ const createEmployeePayrollData = () => {
     employeePayrollData.salary = document.querySelector('#salary').value;
     employeePayrollData.startDate = document.getElementById("start-date").value;
     employeePayrollData.note = document.querySelector('#notes').value;
+    let date = getInputValueById('#day')+" "+getInputValueById('#month')+" "+getInputValueById('#year');
+    employeePayrollData.date = Date.parse(date);
+    alert.employeePayrollData.toString();
     return employeePayrollData;
 }
 
