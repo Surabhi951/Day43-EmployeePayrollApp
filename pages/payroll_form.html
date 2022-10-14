@@ -16,17 +16,17 @@
       <img src="../assets/images/logo.png" alt="">
       <div>
         <span class="emp-text">EMPLOYEE</span><br>
-        <span class="emp-text emp payroll">PAYROLL</span>
+        <span class="emp-text emp-payroll">PAYROLL</span>
       </div>
     </div>
   </header>
-  <div class="form-content">
-    <form class="form" action="#" onsubmit="save();return false">
+  <div id="formId" class="form-content">
+    <form class="form" action="#" onreset="resetForm()" onsubmit="save();return false">
       <div class="form-head">Employee Payroll form</div>
       <div class="row-content">
         <label class="label text" for="name">Name</label>
         <input class="input" type="text" id="name" name="name" placeholder="your name.." required>
-		<div class="text-error" for="name"></div>
+		    <error-output class="text-error" for="text"></error-output>
       </div>
       <div class="row-content">
         <label class="label text" for="profile">Profile image</label>
@@ -63,15 +63,15 @@
       <div class="row-content">
         <label class="label text" for="department">Department</label>
         <div>
-          <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR">
+          <input class="checkbox" type="checkbox" id="hr" name="department" value="HR">
           <label class="text" for="hr">HR</label>
-          <input class="checkbox" type="checkbox" id="sales" name="sales" value="Sales">
+          <input class="checkbox" type="checkbox" id="sales" name="department" value="Sales">
           <label class="text" for="sales">Sales</label>
-          <input class="checkbox" type="checkbox" id="finance" name="finance" value="Finance">
+          <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance">
           <label class="text" for="finance">Finance</label>
-          <input class="checkbox" type="checkbox" id="engineer" name="engineer" value="Engineer">
+          <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer">
           <label class="text" for="engineer">Engineer</label>
-          <input class="checkbox" type="checkbox" id="others" name="others" value="Others">
+          <input class="checkbox" type="checkbox" id="others" name="department" value="Others">
           <label class="text" for="others">Others</label>
         </div>
       </div>
@@ -83,7 +83,7 @@
       </div>
 
       <div class="row-content">
-        <label class="label text" for="start date">Start Date</label>
+        <label class="label text" for="start-date">Start Date</label>
         <div>
            <select id="day" name="Day">
             <option value="1">1</option>
@@ -142,15 +142,16 @@
               <option value="2017">2017</option>
               <option value="2016">2016</option>
             </select>
-        </div>
+         </div>
       </div>
 
       <div class="row-content">
         <label class="label text" for="notes">Notes</label>
         <textarea id="notes" class="input" name="Notes" placeholder="" style="height:100px"></textarea>
       </div>
+      
       <div class="buttonParent">
-        <a href="./payroll_form.html" class="resetButton button cancelButton">Cancel</a>
+        <a href="../pages/home_page.html" class="resetButton button cancelButton">Cancel</a>
         <div class="submit—reset">
           <button type="submit" class="button submitButton" id="submitButton">Submit</button>
           <button type="reset" class="button resetButton">Reset</button>
@@ -159,14 +160,6 @@
       
     </form>
   </div>
-
-  <script>
-    const salary = document.querySelector('#salary');
-    const output = document.querySelector('.salary-output');
-    salary.addEventListener('input',function(){
-        output.textContent = salary.value;
-    });
-  </script>
 </body>
 
 </html>
